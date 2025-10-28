@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>descubretupiza</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('guanaco.jpg.jfif') no-repeat center center/cover;
+      color: white;
+      overflow-x: hidden;
+      user-select: none;
+      cursor: grab;
+    }
+    body:active { cursor: grabbing; }
+
+    nav.nav {
+      width: 100%;
+      background: rgba(22, 10, 10, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+    nav.nav ul.menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    nav.nav ul.menu li.elemento > a {
+      color: rgb(242, 48, 0);
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    nav.nav ul.menu li.elemento > a:hover { color: white; }
+    nav.nav ul.menu li.elemento { position: relative; }
+
+    
+    nav.nav ul.menu li.elemento .submenu {
+      display: none;
+      position: absolute;
+      top: 100%; 
+      left: 0;
+      background: orangered;
+      border-radius: 6px;
+      list-style: none;
+      padding: 10px 0;
+      min-width: 180px;
+      z-index: 1500;
+    }
+    nav.nav ul.menu li.elemento:hover .submenu,
+    nav.nav ul.menu li.elemento .submenu:hover {
+      display: block;
+    }
+
+    nav.nav ul.menu li.elemento .submenu li.subelemento a {
+      color: white;
+      display: block;
+      padding: 8px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    nav.nav ul.menu li.elemento .submenu li.subelemento a:hover {
+      background: white;
+      color: orangered;
+    }
+
+    .carousel {
+      margin-top: 80px;
+      width: 90vw;
+      max-width: 1200px;
+      height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: auto;
+      display: flex;
+      gap: 20px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      cursor: grab;
+      user-select: none;
+      padding-bottom: 20px;
+      position: relative;
+      border-radius: 20px;
+    }
+    .carousel:active { cursor: grabbing; }
+    .carousel::-webkit-scrollbar { display: none; }
+    .carousel { scrollbar-width: none; -ms-overflow-style: none; }
+
+    .carousel-item {
+      flex: 0 0 60%;
+      height: 100%;
+      border-radius: 20px;
+      background: #000000aa;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      position: relative;
+      scroll-snap-align: center;
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .carousel-item:hover { transform: scale(1.05); z-index: 10; }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    
+    .slide-text {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: rgb(223, 164, 97);
+      background: rgba(0,0,0,0.6);
+      padding: 8px 15px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      pointer-events: none;
+      user-select: none;
+      max-width: 90%;
+      z-index: 5;
+      display: none;
+    }
+
+    .titulo-pagina {
+      margin: 40px 0 80px 0;
+      font-size: 56px;
+      font-weight: 900;
+      text-align: center;
+      text-shadow: 3px 3px 10px black;
+      user-select: none;
+      color: rgb(188, 27, 27);
+    }
+    p{
+        text-align: justify;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <ul class="menu">
+      <li class="elemento"><a href="#">INICIO</a>
+        <ul class="submenu">
+          <li class="subelemento"><a href="bienvenida.html">BIENVENIDA</a></li>
+          <li class="subelemento"><a href="objetivo.html">OBJETIVO</a></li>
+        </ul>
+      </li>
+      <li class="elemento"><a href="#">ÁREAS PROTEGIDAS</a>
+        <ul class="submenu">
+          <li class="subelemento"><a href="cordillera.html">CORDILLERA DE LOS CHICHAS</a></li>
+          <li class="subelemento"><a href="ecoparque.html">ECOPARQUE ENCANTADO</a></li>
+        </ul>
+      </li>
+      <li class="elemento"><a href="galeria.html">GALERÍA</a></li>
+      <li class="elemento"><a href="mapa.html">UBICACIÓN Y MAPAS</a></li>
+      <li class="elemento"><a href="tupiza.html">TUPIZA Y MÁS</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+<div class="carousel" id="carousel">
+  <div class="carousel-item">
+    <img src="istockphoto-2192830475-2048x2048.jpg" alt="Imagen 1" />
+    <div class="slide-text">¡DESCUBRE LUGARES ÚNICOS EN EL MUNDO!</div>
+  </div>
+  <div class="carousel-item">
+    <img src="istockphoto-2151233164-612x612aaa.jpg" alt="Imagen 2" />
+    <div class="slide-text">EL GUANACO<p>Camelido silvestre de los Andes, vulnerable por la caza y la degradación de pastizales. En Tupiza, está protegido en el Área Protegida Cordillera de los resguardando su hábitad natural.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="istockphoto-2178706311-612x612.webp" alt="Imagen 3" />
+    <div class="slide-text">EL PUMA ANDINO<p>Felino emblemático de los Andes, amenazado por la caza y pérdida de hábitat. En Tupiza, está protegido en el Área Protegida Cordillera de los Chichas, donde se conserva su ecosistema.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="istockphoto-1047912752-612x612eeeeee.jpg" alt="Imagen 4" />
+    <div class="slide-text">TOROYOJ <p>Comunidad a orillas del río San Juan del Oro, con miradores naturales y paisajes únicos. Destaca por su producción de choclo y hortalizas, integrando naturaleza y vida rural.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="a89934284636620f74e5df91dc46f8dd.jpg" alt="Imagen 5" />
+    <div class="slide-text">EL CHIWANKO <p>El chiwanko es un ave pequeña típica de Tupiza, que habita zonas semiáridas e interandinas. Se alimenta de insectos y semillas, y contribuye al equilibrio de los ecosistemas locales, siendo un símbolo de la biodiversidad de la región.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="istockphoto-2047081085-612x612ddd.webp" alt="Imagen 6" />
+    <div class="slide-text">LA TUNA <p>La tuna es una planta característica de Tupiza, adaptada a los climas semiáridos e interandinos. Sus frutos comestibles son fuente de alimento para animales y personas, mientras que su presencia ayuda a prevenir la erosión del suelo, siendo un componente importante de los ecosistemas locales.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="photo-1554402100-8d1d9f3dff80cccc.avif" alt="Imagen 7" />
+    <div class="slide-text">EL CHOCLO <p>El choclo es uno de los cultivos tradicionales de Tupiza, cultivado en sus valles interandinos gracias a la fertilidad de sus suelos. Es un alimento básico en la dieta local y se utiliza en diversas preparaciones gastronómicas, representando tanto un recurso agrícola importante como parte de la identidad cultural de la región.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="34istockphoto-2067746961-612x612.jpg" alt="Imagen 8" />
+    <div class="slide-text">LA PUERTA DEL DIABLO <p>La Puerta del Diablo es una de las formaciones geológicas más conocidas de Tupiza. Se trata de un estrecho paso rocoso formado por altos paredones de color rojizo que, con el tiempo, han sido moldeados por la erosión natural, generando un paisaje imponente y lleno de misticismo. Este sitio no solo atrae por su belleza escénica, sino también por las leyendas locales que lo rodean, convirtiéndolo en un punto de interés turístico y cultural dentro del municipio.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="35istockphoto-1823179491-612x612.jpg" alt="Imagen 9" />
+    <div class="slide-text">TURISMO A CABALLO <p>El turismo a caballo en Tupiza es una de las actividades más representativas y atractivas para los visitantes. Permite recorrer paisajes únicos de cañones, quebradas y formaciones rocosas, ofreciendo una experiencia auténtica en contacto directo con la naturaleza. Además, este tipo de turismo rescata tradiciones locales vinculadas a la vida campesina y la ganadería, convirtiéndose en una forma sostenible de conocer la riqueza cultural y geográfica del municipio.</p></div>
+  </div>
+  <div class="carousel-item">
+    <img src="36istockphoto-2138802418-612x612.jpg" alt="Imagen 10" />
+    <div class="slide-text">RIO TUPIZA <p>El río Tupiza es un afluente que se conecta con el sistema del río Pilcomayo y atraviesa el municipio, siendo vital para la vida de la región. A pesar de que actualmente enfrenta problemas de contaminación debido a la actividad minera en la zona, sus aguas continúan siendo utilizadas para el riego de cultivos, sosteniendo la agricultura local. Este río, además de su importancia productiva, forma parte del paisaje característico de Tupiza y refleja la relación entre la comunidad y su entorno natural.</p></div>
+  </div>
+</div>
+
+<div class="titulo-pagina">¡TUPIZA POR DESCUBRIR!</div>
+
+<script>
+const carousel = document.getElementById('carousel');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+
+carousel.addEventListener('mousedown', (e) => {
+  isDown = true;
+  carousel.classList.add('active');
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('active'); });
+carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('active'); });
+carousel.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 3; 
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
+
+document.querySelectorAll('.carousel-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const text = item.querySelector('.slide-text');
+    if (text.style.display === 'block') {
+      text.style.display = 'none';
+    } else {
+      document.querySelectorAll('.slide-text').forEach(t => t.style.display = 'none');
+      text.style.display = 'block';
+    }
+  });
+});
+</script>
+</body>
+</html>
+
