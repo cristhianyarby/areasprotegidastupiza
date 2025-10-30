@@ -25,26 +25,31 @@
       z-index: 1000;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      align-items: center;
+      padding: 10px 5px;
       font-weight: bold;
+      flex-wrap: wrap;
+      box-sizing: border-box;
     }
     nav.nav ul.menu {
       list-style: none;
       display: flex;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 25px;
       margin: 0;
       padding: 0;
+      justify-content: center;
+      text-align: center;
     }
     nav.nav ul.menu li.elemento > a {
       color: rgb(242, 48, 0);
       text-decoration: none;
-      font-size: 18px;
+      font-size: clamp(12px, 2.5vw, 18px);
       transition: color 0.3s;
+      white-space: nowrap;
     }
     nav.nav ul.menu li.elemento > a:hover { color: white; }
     nav.nav ul.menu li.elemento { position: relative; }
-
-    
     nav.nav ul.menu li.elemento .submenu {
       display: none;
       position: absolute;
@@ -54,21 +59,21 @@
       border-radius: 6px;
       list-style: none;
       padding: 10px 0;
-      min-width: 180px;
+      min-width: 160px;
       z-index: 1500;
     }
     nav.nav ul.menu li.elemento:hover .submenu,
     nav.nav ul.menu li.elemento .submenu:hover {
       display: block;
     }
-
     nav.nav ul.menu li.elemento .submenu li.subelemento a {
       color: white;
       display: block;
-      padding: 8px 20px;
+      padding: 8px 15px;
       text-decoration: none;
-      font-size: 16px;
+      font-size: clamp(11px, 2vw, 16px);
       transition: background 0.3s;
+      text-align: left;
     }
     nav.nav ul.menu li.elemento .submenu li.subelemento a:hover {
       background: white;
@@ -79,7 +84,8 @@
       margin-top: 80px;
       width: 90vw;
       max-width: 1200px;
-      height: 500px;
+      height: 50vh;
+      min-height: 240px;
       margin-left: auto;
       margin-right: auto;
       overflow-x: auto;
@@ -123,7 +129,6 @@
       user-select: none;
     }
 
-    
     .slide-text {
       position: absolute;
       bottom: 15px;
@@ -132,7 +137,7 @@
       background: rgba(0,0,0,0.6);
       padding: 8px 15px;
       border-radius: 12px;
-      font-size: 20px;
+      font-size: clamp(12px, 2vw, 20px);
       font-weight: 600;
       pointer-events: none;
       user-select: none;
@@ -143,15 +148,29 @@
 
     .titulo-pagina {
       margin: 40px 0 80px 0;
-      font-size: 56px;
+      font-size: clamp(24px, 6vw, 56px);
       font-weight: 900;
       text-align: center;
       text-shadow: 3px 3px 10px black;
       user-select: none;
       color: rgb(188, 27, 27);
     }
-    p{
-        text-align: justify;
+    p { text-align: justify; font-size: clamp(12px, 2.5vw, 16px); }
+
+    @media (max-width: 1024px) {
+      .carousel { height: 45vh; }
+      .carousel-item { flex: 0 0 70%; }
+    }
+    @media (max-width: 768px) {
+      nav.nav ul.menu { gap: 15px; }
+      .carousel { height: 40vh; }
+      .carousel-item { flex: 0 0 80%; }
+    }
+    @media (max-width: 480px) {
+      nav.nav { padding: 5px 0; }
+      nav.nav ul.menu { gap: 10px; }
+      .carousel { height: 35vh; }
+      .carousel-item { flex: 0 0 90%; }
     }
   </style>
 </head>
@@ -174,7 +193,6 @@
       <li class="elemento"><a href="galeria.html">GALERÍA</a></li>
       <li class="elemento"><a href="mapa.html">UBICACIÓN Y MAPAS</a></li>
       <li class="elemento"><a href="tupiza.html">TUPIZA Y MÁS</a></li>
-      
     </ul>
   </nav>
 </header>
@@ -229,16 +247,13 @@ const carousel = document.getElementById('carousel');
 let isDown = false;
 let startX;
 let scrollLeft;
-
-
 carousel.addEventListener('mousedown', (e) => {
   isDown = true;
-  carousel.classList.add('active');
   startX = e.pageX - carousel.offsetLeft;
   scrollLeft = carousel.scrollLeft;
 });
-carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('active'); });
-carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('active'); });
+carousel.addEventListener('mouseleave', () => { isDown = false; });
+carousel.addEventListener('mouseup', () => { isDown = false; });
 carousel.addEventListener('mousemove', (e) => {
   if(!isDown) return;
   e.preventDefault();
@@ -246,8 +261,6 @@ carousel.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 3; 
   carousel.scrollLeft = scrollLeft - walk;
 });
-
-
 document.querySelectorAll('.carousel-item').forEach(item => {
   item.addEventListener('click', () => {
     const text = item.querySelector('.slide-text');
@@ -262,4 +275,8 @@ document.querySelectorAll('.carousel-item').forEach(item => {
 </script>
 </body>
 </html>
+
+
+
+
 
