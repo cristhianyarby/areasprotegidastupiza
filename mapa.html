@@ -13,7 +13,6 @@
             background-size: cover;
         }
 
-
     .titulo-pagina {
       margin: 60px 0 40px 0;
       font-size: 56px;
@@ -32,9 +31,6 @@
       text-align: justify;
     }
 
-    
-    
-    
     .footer {
       background-color:#0d3a53 ;
       padding: 20px 0;
@@ -71,7 +67,6 @@
       margin-top: 10px;
     }
 
-    
     .comentarios {
       background-color: #f4f4f4;
       padding: 20px;
@@ -117,92 +112,107 @@
       background-color: orange;
     }
 
-
-
-.contenido {
-    background-color: rgba(255, 255, 255, 0.85); 
-    border-radius: 15px;
-    padding: 30px;
-    margin: 20px 3.5cm 40px 3.5cm; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-}
-
-.contenido .texto, .contenido .imagen {
-    flex: 1 1 400px; 
-}
-
-.contenido .texto h2 {
-    margin-top: 0;
-}
-
-.contenido .imagen img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-
-@media (max-width: 768px) {
     .contenido {
+      background-color: rgba(255, 255, 255, 0.85); 
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto 40px auto; 
+      max-width: 1200px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .contenido .texto, .contenido .imagen {
+      flex: 1 1 100%;
+    }
+
+    .contenido .texto h2 {
+      margin-top: 0;
+    }
+
+    .contenido .imagen iframe {
+      width: 100%;
+      height: 480px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    @media (max-width: 1024px) {
+      .contenido {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
         flex-direction: column;
         text-align: center;
-        margin: 15px; 
-    }
-    .contenido .texto {
+        padding: 15px;
+        margin: 15px auto 30px auto;
+      }
+      .contenido .texto {
         text-align: center;
+      }
+      .contenido .imagen iframe {
+        height: 360px;
+      }
     }
-}
-p{
-  text-align: justify;
-}
 
-
-
-
+    @media (max-width: 480px) {
+      .titulo-pagina {
+        font-size: 36px;
+        margin: 40px 0 20px 0;
+      }
+      .contenido {
+        padding: 10px;
+        margin: 10px auto 20px auto;
+      }
+      .contenido .imagen iframe {
+        height: 240px;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="titulo-pagina"> UBICACIÓN Y MAPAS</div>
 
-  
-<div class="contenido">
+  <div class="contenido">
     <div class="imagen">
-        <iframe src="https://www.google.com/maps/d/embed?mid=19UMhKDH_LjzWKuvfroVYFTJlFogH7H8&ehbc=2E312F" width="640" height="480"></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=19UMhKDH_LjzWKuvfroVYFTJlFogH7H8&ehbc=2E312F"></iframe>
     </div>
     <div class="texto">
         <h2>MAPA CORDILLERA DE LOS CHICHAS-MOCHARÁ </h2>
         <p>El mapa del Área Protegida propuesta muestra su ubicación al Noreste del Municipio de Tupiza, en la Provincia Sud Chichas del Departamento de Potosí. Abarca una superficie aproximada de 36.362,67 hectáreas, delimitada dentro de una zona de relieve propio de la Cordillera Oriental de los Andes.</p>
-
-<p>En la representación cartográfica se identifican las principales comunidades incluidas dentro del área, entre ellas Papachacra, Salahuayco, Peña Amarilla, Mochará Mayo, Tambo Mochará y Huerta Huayco, las cuales se distribuyen a lo largo del territorio propuesto.</p>
-
-<p>El mapa permite visualizar claramente los límites naturales y administrativos del área, así como su relación con el entorno municipal de Tupiza. También evidencia la diversidad de ecosistemas y zonas de transición presentes en la región, donde predominan formaciones montañosas, quebradas y sectores de valle interandino.</p>
-
-<p>En conjunto, la cartografía refleja la extensión, ubicación geográfica y las comunidades involucradas dentro de la propuesta del Área Protegida Municipal, aportando una visión general de su contexto territorial y ecológico. </p>
+        <p>En la representación cartográfica se identifican las principales comunidades incluidas dentro del área, entre ellas Papachacra, Salahuayco, Peña Amarilla, Mochará Mayo, Tambo Mochará y Huerta Huayco, las cuales se distribuyen a lo largo del territorio propuesto.</p>
+        <p>El mapa permite visualizar claramente los límites naturales y administrativos del área, así como su relación con el entorno municipal de Tupiza. También evidencia la diversidad de ecosistemas y zonas de transición presentes en la región, donde predominan formaciones montañosas, quebradas y sectores de valle interandino.</p>
+        <p>En conjunto, la cartografía refleja la extensión, ubicación geográfica y las comunidades involucradas dentro de la propuesta del Área Protegida Municipal, aportando una visión general de su contexto territorial y ecológico. </p>
       </div>
-</div>
+  </div>
 
-<div class="contenido">
+  <div class="contenido">
     <div class="imagen">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1Hduq8KFGSvWLYlsbriVD6hRn8WZ1PJc&ehbc=2E312F" width="640" height="480"></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1Hduq8KFGSvWLYlsbriVD6hRn8WZ1PJc&ehbc=2E312F"></iframe>
     </div>
     <div class="texto">
         <h2>MAPA ECOPARQUE ENCANTADO</h2>
-        <p>El mapa del Área Protegida Municipal “Eco Parque Encantado” muestra una extensión total de 3819.9967 hectáreas, localizada en la Cordillera Oriental de los Andes, dentro del municipio de Tupiza.</p><p> El área se encuentra comprendida entre las estribaciones de las cordilleras de Los Chichas, presentando un relieve montañoso característico de la región andina.</p>
-
-<p>En el nivel macro o general, el mapa abarca territorio perteneciente a los distritos urbanos XIII, IX, X y XII del municipio de Tupiza. Dentro de estos distritos, se representan las juntas vecinales de Palala Baja, San Gerardo, La Granja, Villa Fátima Alta, Villas Unidas, Pukhapampa, Palmira y Santa Elena.</p>
-
-<p>Asimismo, el mapa incluye parte del área rural, correspondiente a los distritos I y III, donde se localizan las comunidades y OTBs de Torre Huayco, Quebrada Seca, Palquiza y Chifloca, las cuales se encuentran directamente involucradas en el ámbito del área protegida.</p>
-
-<p>El trazado del mapa permite visualizar los límites geográficos del Eco Parque Encantado, evidenciando su ubicación estratégica entre zonas.</p>
+        <p>El mapa del Área Protegida Municipal “Eco Parque Encantado” muestra una extensión total de 3819.9967 hectáreas, localizada en la Cordillera Oriental de los Andes, dentro del municipio de Tupiza.</p>
+        <p>El área se encuentra comprendida entre las estribaciones de las cordilleras de Los Chichas, presentando un relieve montañoso característico de la región andina.</p>
+        <p>En el nivel macro o general, el mapa abarca territorio perteneciente a los distritos urbanos XIII, IX, X y XII del municipio de Tupiza. Dentro de estos distritos, se representan las juntas vecinales de Palala Baja, San Gerardo, La Granja, Villa Fátima Alta, Villas Unidas, Pukhapampa, Palmira y Santa Elena.</p>
+        <p>Asimismo, el mapa incluye parte del área rural, correspondiente a los distritos I y III, donde se localizan las comunidades y OTBs de Torre Huayco, Quebrada Seca, Palquiza y Chifloca, las cuales se encuentran directamente involucradas en el ámbito del área protegida.</p>
+        <p>El trazado del mapa permite visualizar los límites geográficos del Eco Parque Encantado, evidenciando su ubicación estratégica entre zonas.</p>
       </div>
-</div>
-  
+  </div>
 
-
-  
   <footer class="footer">
     <ul>
       <li><a href="bienvenida.html">BIENVENIDA</a></li>
@@ -282,16 +292,10 @@ p{
     });
   });
 </script>
-
-  
-
-
-
-
-
-
-
-
-
 </body>
 </html>
+
+
+
+
+
